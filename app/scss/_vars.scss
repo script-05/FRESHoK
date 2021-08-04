@@ -6,6 +6,11 @@ $num: #CF3E3B;
 $active: #E0EDCF;
 $advantages: #505050;
 $bg: #F6F6F6;
+$head: #121212;
+$input: #4F4F4F;
+$hit: #FF7A00;
+$price: #C1C1C1;
+
 
 %Lato-300{
   font-family: 'Lato-Light', sans-serif;
@@ -52,6 +57,8 @@ $bg: #F6F6F6;
   line-height: 1.3;
   letter-spacing: 0.03em;
   border: 1px solid transparent;
+  transition: color 0.5s, border-bottom 0.5s, border 0.5s ;
+
 
   &:focus {
     border: 1px solid #000;    
@@ -69,3 +76,32 @@ $bg: #F6F6F6;
   }
 }
 
+%link {
+  border: 1px solid transparent;
+  transition: color 0.5s, border-bottom 0.5s, border 0.5s ;
+
+    &:focus {
+      color: $accent;
+    }
+    
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  
+    &:active {
+      border: 1px solid #fff;
+    }
+}
+
+%promotion-btn {
+  text-transform: uppercase;
+  @extend %Lato-700;
+  font-size: 10px;
+  line-height: 0.8;
+  letter-spacing: 0.03em;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 3px 6px;
+  height: 16px;
+}

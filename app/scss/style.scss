@@ -37,23 +37,9 @@
     display: flex;
   }
 
-  &__link {
+  &__info {
     position: relative;
-    border: 1px solid transparent;
-
-    &:focus {
-      border: 1px solid #000;
-    }
-    
-    &:hover {
-      transform: scale(0.8);
-      // border: 1px solid #fff;
-    }
-  
-    &:active {
-      transform: scale(1);
-      // border: 1px solid #fff;
-    }
+    @extend %link;
 
     &::before {
       position: absolute;
@@ -63,7 +49,7 @@
     }
   }
 
-  &__link--delivery {
+  &__info--delivery {
     margin-right: 48px;
     padding-left: 44px;
 
@@ -72,7 +58,7 @@
     }
   }
 
-  &__link--hotline {
+  &__info--hotline {
     padding-left: 34px;
 
     &::before {
@@ -130,6 +116,7 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: color 0.5s, border-bottom 0.5s, border 0.5s ;
 
     &:focus {
       background-color: #fff;
@@ -149,6 +136,7 @@
 
   &__items {
     display: flex;
+    align-items: center;
   }
 
   &__item {
@@ -161,20 +149,21 @@
 
   &__link {
     border: 1px solid transparent;
+    transition: transform 0.5s, border 0.5s ;
 
     &:focus {
-      color: $accent;
+      border: 1px solid #fff;
     }
     
     &:hover {
-      border-bottom: 1px solid #fff;
+      transform: scale(0.8);
     }
   
     &:active {
-      border: 1px solid #fff;
+      transform: scale(1);
     }
 
-    &--human{
+    &--human {
       content: url('../images/icons/human.svg');
     }
 
@@ -218,19 +207,7 @@
     }
 
     &__link {
-      border: 1px solid transparent;
-
-      &:focus {
-        color: $accent;
-      }
-      
-      &:hover {
-        border-bottom: 1px solid #fff;
-      }
-    
-      &:active {
-        border: 1px solid #fff;
-      }
+      @extend %link;
     }
   }
 
@@ -293,6 +270,8 @@
     background-color: #fff;
     border: 1px solid rgba(193, 193, 193, 0.3);
     position: relative;
+    transition: color 0.5s, border-top 0.5s;
+
 
     &:not(:first-child) {
       border-top: 0;
@@ -391,6 +370,8 @@
   height: 60px;
   border-radius: 6px;
   cursor: pointer;
+  transition: border 0.5s, background-color 0.5s;
+
 
   &:focus {
     border: 1px solid #000;
@@ -474,7 +455,7 @@
   &__title {
     @extend %Lato-700;
     line-height: 1.4;
-    color: #121212;
+    color: $head;
     margin-bottom: 7px;
   }
 
@@ -484,6 +465,237 @@
     color: $advantages;
   }
 }
+
+.products {
+  padding-top: 72px;
+
+  &__top {
+  text-align: center;
+  margin-bottom: 48px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    @extend %Signika-600;
+    font-size: 32px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+    color: $head;
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  &__filter:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__category {
+    text-transform: uppercase;
+    padding: 0;
+    border: 1px solid transparent;
+    background-color: transparent;
+    @extend %Lato-700;
+    font-size: 15px;
+    line-height: 1.4;
+    color: $advantages;
+    transition: color 0.5s, border-bottom 0.5s, border 0.5s ;
+
+    &:focus {
+      color: $accent;
+      border-bottom: 1px solid $accent;
+    }
+    
+    &:hover {
+      border-bottom: 1px solid $advantages;
+    }
+  
+    &:active {
+      border: 1px solid $advantages;
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    column-count: 3;
+    column-gap: 30px;
+    margin-bottom: 18px;
+  }
+
+  &__item {
+    border: 1px solid rgba(17, 17, 17, 0.2);
+    width: 300px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 12px 7px 12px;
+    height: 38px;
+  }
+
+  &__promotions {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 6px;
+  }
+
+  &__promotion--new {
+    @extend %promotion-btn;
+    background-color: $accent;
+  }
+
+  &__promotion--percent {
+    @extend %promotion-btn;
+    background-color: $num;
+  }
+  
+  &__promotion--hit {
+    @extend %promotion-btn;
+    background-color: $hit;
+  }
+
+  &__btn--fav {
+    content: url('../images/icons/favorite.svg');
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    transition: border-bottom 0.5s, transform 0.5s, border 0.5s ;
+
+    &:focus {
+      border-bottom: 1px solid red;
+    }
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+  
+    &:active {
+      border: 1px solid red;
+    }
+  }
+
+  &__img {
+    margin-bottom: 18px;
+  }
+
+  &__name {
+    padding: 0 18px;
+    height: 70px;
+    color: $head;
+    @extend %text-14;
+    @extend %Lato-600;
+    letter-spacing: 0.03em;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 18px 18px 18px;
+  }
+
+  &__prices {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 3px;
+  }
+
+  &__price {
+    display: inline-block;
+    color: $advantages;
+    @extend %Lato-400;
+    @extend %text-14;
+    line-height: 1;
+    letter-spacing: 0.03em;
+  }
+
+  &__price--old {
+    color: $price;
+    position: relative;
+
+    &:before {
+      content: "";
+      border-bottom: 1px solid $price;
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      transform: rotate(-15deg);
+    }
+  }
+
+  &__btn--cart {
+    content: url('../images/icons/cart.svg');
+    border: 1px solid transparent;
+    background-color: $accent;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    display: flex;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.5s, border 0.5s, content 0.5s, ;
+
+    &:focus {
+      content: url('../images/icons/cart_green.svg');
+      background-color: #fff;
+      border: 1px solid $accent;
+    }
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+  
+    &:active {
+      border: 1px solid #000;
+      background-color: #000;
+
+    }
+  }
+
+  &__add {
+    @extend %btn;
+    color: $accent;
+    background-color: #fff;
+    border: 1px solid $accent;
+    display: block;
+    // margin: auto;
+    margin: 0 auto 72px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .footer {
   background-color: $top;
@@ -511,7 +723,7 @@
     height: 40px;
     background-color: #fff;
     border-radius: 6px 0 0 6px;
-    color: #4F4F4F;
+    color: $input;
     border: none;
   }
 
@@ -533,19 +745,7 @@
 
   &__connection {
     margin-bottom: 18px;
-    border: 1px solid transparent;
-
-      &:focus {
-        color: $accent;
-      }
-      
-      &:hover {
-        border-bottom: 1px solid #fff;
-      }
-    
-      &:active {
-        border: 1px solid #fff;
-      }
+    @extend %link;
   }
 
   &__socials {
@@ -558,6 +758,7 @@
 
   &__media {
     border: 1px solid transparent;
+    transition: color 0.5s, border 0.5s;
 
     &:focus {
       color: $accent;
@@ -629,19 +830,8 @@
   }
 
   &__link {
-    border: 1px solid transparent;
-
-    &:focus {
-      color: $accent;
-    }
+    @extend %link;
     
-    &:hover {
-      border-bottom: 1px solid #fff;
-    }
-  
-    &:active {
-      border: 1px solid #fff;
-    }
   }
 }
 
