@@ -1,107 +1,29 @@
-$top: #31352B;
+$green-900: #63A60E;
+$green-200: #E0EDCF;
+$green-100: #EFF6E7;
+$dark-green-500: #436372;
+$dark-900: #121212;
+$dark-800: #31352B;
+$dark-500: #505050;
+$red-900: #CF3E3B;
+$orange-900: #FF7A00;
+$yellow-900: #FFB800;
+$silver-600: #C1C1C1;
+$silver-200: #F5F5F5;
+$silver-100: #F6F6F6;
+$white: #FFF;
+
 $title: #243f4d;
-$accent: #63A60E;
 $accent--light: #77c90c;
-$num: #CF3E3B;
-$active: #E0EDCF;
-$advantages: #505050;
-$bg: #F6F6F6;
-$head: #121212;
 $input: #4F4F4F;
-$hit: #FF7A00;
-$price: #C1C1C1;
-
-
-%Lato-300{
-  font-family: 'Lato-Light', sans-serif;
-  font-weight: 300;
-}
-
-%Lato-400{
-  font-family: 'Lato-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%Lato-600{
-  font-family: 'Lato-Semibold', sans-serif;
-  font-weight: 600;
-}
-
-%Lato-700{
-  font-family: 'Lato-Bold', sans-serif;
-  font-weight: 700;
-}
-
-%Signika-600{
-  font-family: 'Signika-SemiBold', sans-serif;
-  font-weight: 600;
-}
-
-%Signika-700{
-  font-family: 'Signika-Bold', sans-serif;
-  font-weight: 700;
-}
-
-%text-14 {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-%btn {
-  @extend %Lato-400;
-  padding: 12px 24px;
-  color: #fff;
-  background-color: $accent;
-  border-radius: 6px;
-  font-size: 18px;
-  line-height: 1.3;
-  letter-spacing: 0.03em;
-  border: 1px solid transparent;
-  transition: color 0.5s, border-bottom 0.5s, border 0.5s ;
-
-
-  &:focus {
-    border: 1px solid #000;    
-  }
-  
-  &:hover {
-    background-color: $accent--light;
-    color: #fff;
-  }
-
-  &:active {
-    background-color: #fff;
-    color: $accent;
-    border: 1px solid #000;   
-  }
-}
 
 %link {
   border: 1px solid transparent;
-  transition: color 0.5s, border-bottom 0.5s, border 0.5s ;
+  transition: opacity 0.5s, border-bottom 0.5s, border 0.5s ;
 
-    &:focus {
-      color: $accent;
-    }
-    
+    &:focus,
+    &:active,
     &:hover {
-      border-bottom: 1px solid #fff;
+      opacity: 0.7; 
     }
-  
-    &:active {
-      border: 1px solid #fff;
-    }
-}
-
-%promotion-btn {
-  text-transform: uppercase;
-  @extend %Lato-700;
-  font-size: 10px;
-  line-height: 0.8;
-  letter-spacing: 0.03em;
-  color: #fff;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  padding: 3px 6px;
-  height: 16px;
 }
